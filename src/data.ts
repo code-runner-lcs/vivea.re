@@ -1,5 +1,8 @@
 // Contenus éditoriaux centralisés — à faire valider par Vivéa avant mise en prod.
 
+/** Éditorial : nombre de producteurs (unique source — hero, footer, meta). */
+export const NB_PRODUCTEURS = 160;
+
 export const NAV_ITEMS = [
   { href: "/#op", label: "L'OP Vivéa" },
   { href: "/#produits", label: "Nos produits" },
@@ -125,28 +128,52 @@ export const ESPACE_TABS: TabDef[] = [
 
 export const EXTRANET_URL = "https://extranet.vivea.re/extranet/";
 
-export const PRO_ITEMS: { t: string; d: string }[] = [
+export const PRO_ITEMS: { title: string; detail: string }[] = [
   {
-    t: "Une offre riche",
-    d: "Des fruits et des légumes de qualité, une gamme complète et diversifiée pour approvisionner vos rayons.",
+    title: "Une offre riche",
+    detail: "Des fruits et des légumes de qualité, une gamme complète et diversifiée pour approvisionner vos rayons.",
   },
   {
-    t: "Un savoir-faire éprouvé",
-    d: "Une réponse réactive et adaptée à vos besoins d'approvisionnement.",
+    title: "Un savoir-faire éprouvé",
+    detail: "Une réponse réactive et adaptée à vos besoins d'approvisionnement.",
   },
   {
-    t: "Un accueil professionnel",
-    d: "Sur notre site de Pierrefonds, un espace de vente en gros.",
+    title: "Un accueil professionnel",
+    detail: "Sur notre site de Pierrefonds, un espace de vente en gros.",
   },
   {
-    t: "Des équipements logistiques efficaces",
-    d: "Une plateforme de préparation et d'expédition de 2 700 m².",
+    title: "Des équipements logistiques efficaces",
+    detail: "Une plateforme de préparation et d'expédition de 2 700 m².",
   },
   {
-    t: "Un service performant",
-    d: "Une équipe de préparateurs de commande opérationnelle du lundi au samedi, 6 véhicules de livraisons et 3 prestataires à votre service.",
+    title: "Un service performant",
+    detail: "Une équipe de préparateurs de commande opérationnelle du lundi au samedi, 6 véhicules de livraisons et 3 prestataires à votre service.",
   },
 ];
+
+// ---------- Liens du footer (source unique, une colonne = un groupe) ----------
+export interface FooterLink {
+  href: string;
+  label: string;
+}
+
+export const FOOTER_LINKS: { explorer: FooterLink[]; espaces: FooterLink[]; informer: FooterLink[] } = {
+  explorer: [
+    { href: "/#op", label: "L'OP Vivéa" },
+    { href: "/#produits", label: "Nos produits" },
+    { href: "/#terroir", label: "Où sont les producteurs ?" },
+    { href: "/#bio", label: "La gamme bio" },
+  ],
+  espaces: [
+    { href: "/espaces/", label: "Espace pro" },
+    { href: "/espaces/adherent/", label: "Espace adhérent" },
+    { href: "/terracoop/", label: "Terracoop" },
+  ],
+  informer: [
+    { href: "#", label: "Actus Vivéa" },
+    { href: "#contact", label: "Contactez-nous" },
+  ],
+};
 
 // ---------- Page Terracoop ----------
 // Textes repris verbatim de la page « Terracoop » du site vivéa.

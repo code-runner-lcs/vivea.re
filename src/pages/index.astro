@@ -6,10 +6,13 @@ import Produits from "../components/Produits";
 import Terroir from "../components/Terroir";
 import BioBand from "../components/BioBand";
 import CtaPro from "../components/CtaPro";
+import { NB_PRODUCTEURS } from "../data";
+
+const description = `Vivéa regroupe ${NB_PRODUCTEURS} producteurs de fruits et légumes sur toute l'île de La Réunion : mise en marché, qualité et accompagnement de la filière.`;
 ---
 <Base
   title="Vivéa — Organisation de Producteurs · La Réunion"
-  description="Vivéa regroupe 160 producteurs de fruits et légumes sur toute l'île de La Réunion : mise en marché, qualité et accompagnement de la filière."
+  description={description}
   currentPage="home"
 >
   <Hero />

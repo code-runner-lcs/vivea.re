@@ -22,8 +22,8 @@ function ProPanel() {
           <For each={PRO_ITEMS}>
             {(it) => (
               <li>
-                <strong>{it.t}</strong>
-                <span>{it.d}</span>
+                <strong>{it.title}</strong>
+                <span>{it.detail}</span>
               </li>
             )}
           </For>

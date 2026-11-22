@@ -1,3 +1,4 @@
+import { NB_PRODUCTEURS } from "../data";
 import "./Hero.css";
 
 export default function Hero() {
@@ -8,7 +9,7 @@ export default function Hero() {
           <p class="eyebrow">Organisation de Producteurs · La Réunion</p>
           <h1>
             Des fruits et légumes de La Réunion, cultivés par{" "}
-            <em>160 producteurs</em>.
+            <em>{NB_PRODUCTEURS} producteurs</em>.
           </h1>
           <p class="lede">
             Vivéa fédère et accompagne les producteurs de l'île : mise en marché,
@@ -29,7 +30,7 @@ export default function Hero() {
           <div class="poster">
             <p class="poster-label">«&nbsp;Du champ à la table, à La Réunion.&nbsp;»</p>
             <p class="poster-stat">
-              <b>160</b> producteurs
+              <b>{NB_PRODUCTEURS}</b> producteurs
               <span class="dotsep" aria-hidden="true" />
               sur toute l'île
             </p>
