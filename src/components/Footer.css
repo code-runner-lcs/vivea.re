@@ -1,0 +1,107 @@
+/* Footer — liens, colonnes et mentions ---------- */
+
+.footer {
+  background: #0e2018;
+  color: rgba(242, 238, 226, 0.82);
+  padding-top: clamp(48px, 7vw, 72px);
+}
+
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr 0.9fr 0.8fr;
+  gap: 40px;
+  padding-bottom: 46px;
+}
+
+.foot-brand .foot-logo {
+  margin-bottom: 16px;
+}
+
+.foot-brand p {
+  margin: 0 0 10px;
+  max-width: 36ch;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.contact-note {
+  font-style: italic;
+  font-size: 13px !important;
+  color: rgba(242, 238, 226, 0.45);
+}
+
+/* Logo du footer : autonome (n'hérite pas du Header) */
+.foot-logo {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 9px;
+  border-radius: 14px;
+}
+
+.foot-logo-img {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+
+.foot-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-col h4 {
+  margin: 0 0 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 226, 0.5);
+}
+
+.foot-col a {
+  padding: 7px 0;
+  font-size: 15px;
+  color: rgba(242, 238, 226, 0.85);
+  transition: color 0.2s ease;
+}
+
+.foot-col a:hover {
+  color: #ffffff;
+}
+
+.foot-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: space-between;
+  padding: 20px 0 26px;
+  border-top: 1px solid rgba(242, 238, 226, 0.14);
+  font-size: 13px;
+  color: rgba(242, 238, 226, 0.55);
+}
+
+.foot-bottom a {
+  color: inherit;
+}
+
+.foot-bottom a:hover {
+  color: #ffffff;
+}
+
+.mock-note {
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .foot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .foot-grid {
+    grid-template-columns: 1fr;
+  }
+}
