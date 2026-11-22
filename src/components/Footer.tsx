@@ -52,7 +52,8 @@ export default function Footer() {
           <span>© {YEAR} Vivéa — OP de La Réunion</span>
           <span class="mock-note">Maquette de redesign — textes et visuels à valider</span>
           <span>
-            <a href="#">Mentions légales</a> · <a href="#">Confidentialité</a>
+            <a href="/mentions-legales/">Mentions légales</a> ·{" "}
+            <a href="/confidentialite/">Confidentialité</a>
           </span>
         </div>
       </div>

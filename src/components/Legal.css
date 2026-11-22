@@ -1,0 +1,29 @@
+/* Legal — mentions légales & politique de confidentialité */
+
+.legal {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 7vw, 88px);
+}
+
+.legal-body {
+  max-width: 760px;
+}
+
+.legal-section {
+  margin-bottom: clamp(26px, 4vw, 40px);
+}
+
+.legal-h {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--green-900);
+}
+
+.legal-section p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}

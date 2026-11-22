@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro";
+import { LEGAL_NOTE, MENTIONS_LEGALES } from "../data";
+import "../components/Legal.css";
+---
+<Base
+  title="Mentions légales — Vivéa · La Réunion"
+  description="Mentions légales du site de Vivéa, Organisation de Producteurs de La Réunion : éditeur, directeur de la publication, hébergeur, propriété intellectuelle."
+>
+  <section class="legal">
+    <div class="wrap">
+      <div class="page-head">
+        <p class="eyebrow">Informations légales</p>
+        <h1 class="title">Mentions légales</h1>
+        <p class="lede">{LEGAL_NOTE}</p>
+      </div>
+      <div class="legal-body">
+        {MENTIONS_LEGALES.map((s) => (
+          <section class="legal-section">
+            <h2 class="legal-h">{s.title}</h2>
+            {s.blocks.map((b) => <p>{b}</p>)}
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro";
+import { CONFIDENTIALITE, LEGAL_NOTE } from "../data";
+import "../components/Legal.css";
+---
+<Base
+  title="Politique de confidentialité — Vivéa · La Réunion"
+  description="Politique de confidentialité du site de Vivéa : aucun cookie ni traceur, données personnelles, droits RGPD et contact pour leur exercice."
+>
+  <section class="legal">
+    <div class="wrap">
+      <div class="page-head">
+        <p class="eyebrow">RGPD</p>
+        <h1 class="title">Politique de confidentialité</h1>
+        <p class="lede">{LEGAL_NOTE}</p>
+      </div>
+      <div class="legal-body">
+        {CONFIDENTIALITE.map((s) => (
+          <section class="legal-section">
+            <h2 class="legal-h">{s.title}</h2>
+            {s.blocks.map((b) => <p>{b}</p>)}
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

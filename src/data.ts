@@ -175,6 +175,82 @@ export const FOOTER_LINKS: { explorer: FooterLink[]; espaces: FooterLink[]; info
   ],
 };
 
+// ---------- Pages légales (squelettes — contenus À VALIDER VIVÉA) ----------
+export interface LegalSection {
+  title: string;
+  blocks: string[];
+}
+
+/** Note d'état affichée en tête des deux pages légales. */
+export const LEGAL_NOTE =
+  "Squelette de conformité — les éléments entre crochets [à compléter] attendent les informations de Vivéa avant mise en prod.";
+
+export const MENTIONS_LEGALES: LegalSection[] = [
+  {
+    title: "Éditeur du site",
+    blocks: [
+      "Vivéa — Organisation de Producteurs de fruits et légumes de La Réunion.",
+      "Siège social : [adresse à compléter — site de Pierrefonds, La Réunion].",
+      "Téléphone : [à compléter] · Email : [à compléter].",
+      "Forme juridique, numéro SIREN/SIRET, RCS, numéro de TVA intracommunautaire : [à compléter].",
+    ],
+  },
+  {
+    title: "Directeur de la publication",
+    blocks: [
+      "Nom et fonction de la personne responsable de la publication : [à compléter].",
+    ],
+  },
+  {
+    title: "Hébergement",
+    blocks: [
+      "Hébergeur du site : [nom à compléter], [adresse], [pays]. Contact : [à compléter].",
+    ],
+  },
+  {
+    title: "Propriété intellectuelle",
+    blocks: [
+      "L'ensemble des contenus du site (textes, illustrations, visuels, logos) est protégé par le droit d'auteur et les droits de propriété intellectuelle. Toute reproduction ou réutilisation, totale ou partielle, sans autorisation écrite préalable est interdite.",
+      "Les dénominations TERRACOOP et Gamm Vert ainsi que les visuels associés appartiennent à leurs détenteurs respectifs.",
+    ],
+  },
+];
+
+export const CONFIDENTIALITE: LegalSection[] = [
+  {
+    title: "Responsable du traitement",
+    blocks: [
+      "Vivéa — Organisation de Producteurs. Contact pour les questions relatives aux données personnelles : [à compléter].",
+    ],
+  },
+  {
+    title: "Données collectées par ce site",
+    blocks: [
+      "Ce site vitrine ne collecte aucune donnée personnelle : il ne dépose pas de cookies, n'utilise pas de traceurs et n'embarque aucun outil de statistiques d'audience.",
+      "Les polices et les images utilisées sont hébergées directement sur le site (aucun échange avec un service tiers au chargement des pages).",
+    ],
+  },
+  {
+    title: "Extranet adhérents et liens externes",
+    blocks: [
+      "Le lien « Espace adhérent » renvoie vers l'extranet de Vivéa (extranet.vivea.re), qui possède ses propres conditions d'utilisation et sa propre politique de confidentialité, applicables à l'identification des adhérents.",
+    ],
+  },
+  {
+    title: "Vos droits",
+    blocks: [
+      "Vous disposez des droits d'accès, de rectification, d'effacement, de limitation et d'opposition prévus par le RGPD, et du droit à la portabilité de vos données.",
+      "Vous pouvez les exercer auprès de Vivéa : [contact à compléter]. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr).",
+    ],
+  },
+  {
+    title: "Évolution de cette politique",
+    blocks: [
+      "La présente politique pourra être mise à jour, notamment si un formulaire de contact ou un outil de mesure d'audience venait à être ajouté au site : cette page serait alors modifiée avant la mise en service.",
+    ],
+  },
+];
+
 // ---------- Page Terracoop ----------
 // Textes repris verbatim de la page « Terracoop » du site vivéa.
 export const TERRACOOP_TEXT: string[] = [
