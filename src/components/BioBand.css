@@ -1,0 +1,48 @@
+/* BioBand — bande verte agriculture biologique ---------- */
+
+.bio {
+  position: relative;
+  overflow: hidden;
+  background: var(--green-950);
+  color: #f2eee2;
+  padding: clamp(64px, 9vw, 110px) 0;
+}
+
+.bio-ghost {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-56%) rotate(-4deg);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(7rem, 16vw, 12rem);
+  line-height: 1;
+  color: rgba(242, 238, 226, 0.055);
+  pointer-events: none;
+  user-select: none;
+}
+
+.bio-copy {
+  max-width: 620px;
+}
+
+.bio .eyebrow {
+  color: rgba(242, 238, 226, 0.6);
+}
+
+.bio .eyebrow::before {
+  background: #e08a5a;
+}
+
+.bio .title {
+  color: #f6f2e6;
+}
+
+.bio .lede {
+  color: rgba(242, 238, 226, 0.75);
+}
+
+.bio-actions {
+  margin-top: 30px;
+}
