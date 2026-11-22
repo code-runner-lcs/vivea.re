@@ -9,8 +9,10 @@ function ProPanel() {
     <div class="espace-panel" role="tabpanel" id="panel-pro" aria-labelledby="tab-pro">
       <div class="espace-banner">
         <img
-          src="/img/espace-pro.jpg"
+          src="/img/espace-pro.webp"
           alt="Barquettes de fruits et légumes Vivéa prêtes pour la distribution"
+          width="1225"
+          height="400"
         />
       </div>
       <div class="espace-body">
@@ -46,8 +48,10 @@ function AdherentPanel() {
     >
       <div class="espace-banner">
         <img
-          src="/img/espace-adherent.jpg"
+          src="/img/espace-adherent.webp"
           alt="Échanges entre producteurs Vivéa"
+          width="1225"
+          height="400"
         />
       </div>
       <div class="espace-body">

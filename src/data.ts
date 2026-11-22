@@ -38,6 +38,8 @@ export interface Produit {
   note?: string;
   accent?: boolean;
   img: string;
+  width: number;
+  height: number;
 }
 
 export const PRODUITS: Produit[] = [
@@ -46,51 +48,67 @@ export const PRODUITS: Produit[] = [
     tag: "Emblématique",
     note: "La filière phare de l'OP, réputée au-delà de l'océan Indien.",
     accent: true,
-    img: "/img/produits/ananas-victoria.jpg",
+    img: "/img/produits/ananas-victoria.webp",
+    width: 800,
+    height: 600,
   },
   {
     name: "Letchis",
     tag: "Fruit",
     note: "La campagne de l'été austral.",
-    img: "/img/produits/letchis.jpg",
+    img: "/img/produits/letchis.webp",
+    width: 800,
+    height: 600,
   },
   {
     name: "Mangue",
     tag: "Fruit",
     note: "Plusieurs variétés au fil de la saison.",
-    img: "/img/produits/mangue.jpg",
+    img: "/img/produits/mangue.webp",
+    width: 800,
+    height: 792,
   },
-  { name: "Banane", tag: "Fruit", img: "/img/produits/banane.jpg" },
-  { name: "Avocat", tag: "Fruit", img: "/img/produits/avocat.jpg" },
-  { name: "Agrumes", tag: "Fruits", img: "/img/produits/agrumes.jpg" },
+  { name: "Banane", tag: "Fruit", img: "/img/produits/banane.webp", width: 800, height: 532 },
+  { name: "Avocat", tag: "Fruit", img: "/img/produits/avocat.webp", width: 800, height: 703 },
+  { name: "Agrumes", tag: "Fruits", img: "/img/produits/agrumes.webp", width: 800, height: 600 },
   {
     name: "Chouchou",
     tag: "Légume",
     note: "Le légume des Hauts, star des caris.",
-    img: "/img/produits/chouchou.jpg",
+    img: "/img/produits/chouchou.webp",
+    width: 800,
+    height: 1067,
   },
   {
     name: "Fruits de la passion",
     tag: "Fruit",
-    img: "/img/produits/fruits-de-la-passion.jpg",
+    img: "/img/produits/fruits-de-la-passion.webp",
+    width: 800,
+    height: 666,
   },
-  { name: "Papaye", tag: "Fruit", img: "/img/produits/papaye.jpg" },
+  { name: "Papaye", tag: "Fruit", img: "/img/produits/papaye.webp", width: 800, height: 1069 },
   {
     name: "Vanille",
     tag: "Épice",
     note: "Cultivée dans le Sud sauvage.",
-    img: "/img/produits/vanille.jpg",
+    img: "/img/produits/vanille.webp",
+    width: 800,
+    height: 533,
   },
   {
     name: "Tomate & légumes",
     tag: "Légumes",
     note: "De saison, pour le marché local.",
-    img: "/img/produits/tomates-legumes.jpg",
+    img: "/img/produits/tomates-legumes.webp",
+    width: 800,
+    height: 515,
   },
   {
     name: "Brèdes & herbes",
     tag: "Légumes",
-    img: "/img/produits/bredes-herbes.jpg",
+    img: "/img/produits/bredes-herbes.webp",
+    width: 800,
+    height: 591,
   },
 ];
 

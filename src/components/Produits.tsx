@@ -22,6 +22,8 @@ export default function Produits() {
                   class="ptile-bg"
                   src={p.img}
                   alt=""
+                  width={p.width}
+                  height={p.height}
                   loading="lazy"
                   aria-hidden="true"
                 />
