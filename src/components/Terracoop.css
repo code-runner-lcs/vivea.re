@@ -1,0 +1,72 @@
+/* Terracoop — page du groupe coopératif ---------- */
+
+.terra {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 7vw, 88px);
+}
+
+.terra-band {
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
+  padding: clamp(22px, 3.5vw, 44px) clamp(24px, 4vw, 60px);
+  margin-bottom: clamp(28px, 4.5vw, 52px);
+  display: grid;
+  place-items: center;
+}
+
+.terra-band img {
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+}
+
+.terra-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.terra-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.terra-copy .lede {
+  margin: 0;
+}
+
+.terra-badge {
+  display: grid;
+  justify-items: center;
+}
+
+.terra-badge img {
+  width: min(280px, 62vw);
+  height: auto;
+}
+
+.terra-note {
+  margin: clamp(30px, 5vw, 56px) 0 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-strong);
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .terra-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .terra-badge {
+    order: -1;
+  }
+}
