@@ -1,0 +1,134 @@
+/* Hero — accueil + affiche « du champ à la table » ---------- */
+
+.hero {
+  padding: clamp(46px, 6.5vw, 82px) 0 clamp(56px, 7vw, 88px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.hero h1 {
+  margin: 18px 0 20px;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: var(--fs-h1);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 540;
+  color: var(--green-700);
+}
+
+.hero .lede {
+  max-width: 52ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.poster {
+  position: relative;
+  aspect-ratio: 4 / 4.7;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(165deg, #1a432c 0%, #14311f 52%, #0e2416 100%);
+  box-shadow: var(--shadow-2);
+}
+
+.poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      58% 42% at 82% 12%,
+      rgba(224, 168, 60, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(50% 40% at 12% 88%, rgba(255, 255, 255, 0.05), transparent 65%);
+  pointer-events: none;
+}
+
+.poster-label {
+  margin: 0;
+  padding: 24px;
+  max-width: 22ch;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 520;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.3;
+  color: #f2eee2;
+}
+
+.poster-stat {
+  margin: 20px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(242, 238, 226, 0.85);
+}
+
+.poster-stat b {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 17px;
+  color: #f6f2e6;
+}
+
+.poster-stat .dotsep {
+  background: rgba(242, 238, 226, 0.5);
+}
+
+.poster-actions {
+  margin: 22px 0 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+}
+
+.dotsep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .hero-visual {
+    max-width: 560px;
+  }
+
+  .poster {
+    aspect-ratio: 4 / 3.5;
+  }
+}
