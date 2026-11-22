@@ -1,0 +1,151 @@
+/* Espaces — page « les espaces Vivéa » (pro / adhérent) ---------- */
+
+.espaces {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 7vw, 88px);
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  margin-bottom: clamp(26px, 4vw, 40px);
+}
+
+.tabs button {
+  padding: 12px 22px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tabs button:hover {
+  color: var(--ink);
+}
+
+.tabs button.active {
+  background: var(--green-900);
+  color: #f6f2e6;
+}
+
+.espace-panel {
+  animation: fadeUp 0.45s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.espace-banner {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
+  margin-bottom: clamp(26px, 4vw, 40px);
+  background: var(--bg-2);
+}
+
+.espace-banner img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1225 / 400;
+  object-fit: cover;
+}
+
+.espace-body {
+  max-width: 760px;
+}
+
+.espace-body .title {
+  margin-bottom: 8px;
+}
+
+.espace-slogan {
+  margin: 0 0 22px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 540;
+  font-size: 1.3rem;
+  color: var(--terra);
+}
+
+.pro-list {
+  border-top: 1px solid var(--line);
+  margin: 26px 0;
+}
+
+.pro-list li {
+  display: grid;
+  grid-template-columns: minmax(180px, 250px) 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pro-list strong {
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+.pro-list span {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.espace-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.espace-note {
+  margin-top: 24px;
+}
+
+.ext {
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .tabs {
+    display: flex;
+    width: 100%;
+  }
+
+  .tabs button {
+    flex: 1;
+  }
+
+  .espace-banner img {
+    aspect-ratio: 16 / 7;
+  }
+
+  .pro-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .espace-panel {
+    animation: none;
+  }
+}
