@@ -64,6 +64,7 @@ function AdherentPanel() {
             <span class="ext" aria-hidden="true">
               &nbsp;&#8599;
             </span>
+            <span class="sr-only">(nouvel onglet)</span>
           </a>
         </div>
         <p class="lede espace-note">
@@ -81,6 +82,7 @@ function AdherentPanel() {
 
 export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
   const [tab, setTab] = createSignal(props.initialTab);
+  let tablistEl: HTMLDivElement | undefined;
 
   // La page adhérent est sa propre URL statique : l'onglet garde l'URL en phase.
   const onTab = (t: "pro" | "adherent") => {
@@ -90,6 +92,25 @@ export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
       "",
       t === "pro" ? "/espaces/" : "/espaces/adherent/"
     );
+  };
+
+  // Pattern ARIA APG : flèches ←/→ bouclent, Home/End, activation au focus.
+  const onTablistKeydown = (e: KeyboardEvent) => {
+    const list = tablistEl
+      ? Array.from(tablistEl.querySelectorAll<HTMLButtonElement>("button"))
+      : [];
+    const current = list.indexOf(document.activeElement as HTMLButtonElement);
+    if (current === -1) return;
+    let next: number | null = null;
+    if (e.key === "ArrowRight") next = (current + 1) % list.length;
+    else if (e.key === "ArrowLeft")
+      next = (current - 1 + list.length) % list.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = list.length - 1;
+    if (next === null) return;
+    e.preventDefault();
+    list[next].focus();
+    onTab(ESPACE_TABS[next].id);
   };
 
   return (
@@ -109,6 +130,8 @@ export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
           role="tablist"
           aria-label="Choisir un espace"
           data-reveal="1"
+          ref={tablistEl}
+          onKeyDown={onTablistKeydown}
         >
           <For each={ESPACE_TABS}>
             {(t) => (
@@ -118,6 +141,7 @@ export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
                 id={`tab-${t.id}`}
                 aria-selected={tab() === t.id ? "true" : "false"}
                 aria-controls={`panel-${t.id}`}
+                tabindex={tab() === t.id ? 0 : -1}
                 classList={{ active: tab() === t.id }}
                 onClick={() => onTab(t.id)}
               >
