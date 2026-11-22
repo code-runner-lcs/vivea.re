@@ -1,0 +1,126 @@
+/* Header — barre sticky + navigation + menu mobile ---------- */
+
+.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(247, 244, 236, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.site.scrolled {
+  background: rgba(247, 244, 236, 0.97);
+  border-color: var(--line);
+}
+
+.site-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 74px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-img {
+  display: block;
+  height: 50px;
+  width: auto;
+}
+
+.main {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+}
+
+.main a {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+  padding: 6px 2px;
+  transition: color 0.2s ease;
+  text-underline-offset: 7px;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1.5px;
+}
+
+.main a:hover {
+  color: var(--green-700);
+  text-decoration: underline;
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.mobile-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 6px 24px 24px;
+  flex-direction: column;
+  box-shadow: 0 24px 40px rgba(30, 42, 34, 0.12);
+}
+
+.mobile-panel > a {
+  padding: 14px 2px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+
+.panel-ctas {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+@media (max-width: 940px) {
+  .main {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .mobile-panel {
+    display: flex;
+  }
+}
+
+@media (min-width: 941px) {
+  .mobile-panel {
+    display: none !important;
+  }
+}
