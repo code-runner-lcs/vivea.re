@@ -1,0 +1,154 @@
+/* Produits — grille photo des filières ---------- */
+
+.head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+
+.ptile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 196px;
+  padding: 24px 22px;
+  background: var(--green-950);
+  overflow: hidden;
+}
+
+.ptile > :not(.ptile-bg):not(.ptile-veil) {
+  position: relative;
+  z-index: 1;
+}
+
+.ptile-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  transition: transform 0.45s ease;
+}
+
+.ptile:hover .ptile-bg {
+  transform: scale(1.045);
+}
+
+.ptile-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 40, 26, 0.22) 0%,
+    rgba(16, 40, 26, 0.34) 55%,
+    rgba(16, 40, 26, 0.66) 100%
+  );
+}
+
+.ptile .name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: 1.28rem;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: #fff8ee;
+}
+
+.ptile .note {
+  margin: 0;
+  max-width: 32ch;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 248, 238, 0.78);
+}
+
+.tags {
+  margin: auto 0 0;
+  display: flex;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: rgba(255, 248, 238, 0.9);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.tag--accent {
+  border-color: var(--terra);
+  background: var(--terra);
+  color: #fff8ee;
+}
+
+.arrow {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--green-700);
+  font-size: 18px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ptile:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ptile.featured .name {
+  font-size: 1.55rem;
+}
+
+@media (max-width: 1080px) {
+  .pgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .head-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .pgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ptile {
+    min-height: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow,
+  .ptile,
+  .ptile-bg {
+    transition: none;
+  }
+}
