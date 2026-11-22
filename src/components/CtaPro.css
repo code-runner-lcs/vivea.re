@@ -1,0 +1,29 @@
+/* CtaPro — carte d'appel à l'espace pro ---------- */
+
+.pro-card {
+  max-width: 880px;
+  margin-inline: auto;
+  padding: clamp(32px, 5vw, 56px);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-1);
+  text-align: center;
+}
+
+.pro-card .eyebrow {
+  justify-content: center;
+}
+
+.pro-card .lede {
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.pro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+}
