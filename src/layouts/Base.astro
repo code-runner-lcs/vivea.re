@@ -19,6 +19,9 @@ interface Props {
 }
 
 const { title, description, currentPage = "home" } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/og-vivea.jpg", Astro.site);
 ---
 <!doctype html>
 <html lang="fr">
@@ -27,8 +30,21 @@ const { title, description, currentPage = "home" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f4ec" />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/png" href="/logo-vivea.png" />
     <link rel="apple-touch-icon" href="/logo-apple-touch.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vivéa" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <script is:inline>
       // Marque le document « JS actif » AVANT le premier paint :
       // sans JS, les [data-reveal] restent visibles (voir base.css).
