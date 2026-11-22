@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <nav class="foot-col" aria-label="Explorer">
-            <h4>Explorer</h4>
+            <h3>Explorer</h3>
             <a href="/#op">L'OP Vivéa</a>
             <a href="/#produits">Nos produits</a>
             <a href="/#terroir">Où sont les producteurs ?</a>
@@ -33,14 +33,14 @@ export default function Footer() {
           </nav>
 
           <nav class="foot-col" aria-label="Espaces">
-            <h4>Espaces</h4>
+            <h3>Espaces</h3>
             <a href="/espaces/">Espace pro</a>
             <a href="/espaces/adherent/">Espace adhérent</a>
             <a href="/terracoop/">Terracoop</a>
           </nav>
 
           <nav class="foot-col" aria-label="Informations">
-            <h4>Informer</h4>
+            <h3>Informer</h3>
             <a href="#">Actus Vivéa</a>
             <a href="#contact">Contactez-nous</a>
           </nav>
