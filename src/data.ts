@@ -1,11 +1,11 @@
 // Contenus éditoriaux centralisés — à faire valider par Vivéa avant mise en prod.
 
 export const NAV_ITEMS = [
-  { href: "#op", label: "L'OP Vivéa" },
-  { href: "#produits", label: "Nos produits" },
-  { href: "#terroir", label: "Producteurs" },
-  { href: "#bio", label: "La gamme bio" },
-  { href: "#/terracoop", label: "Terracoop" },
+  { href: "/#op", label: "L'OP Vivéa" },
+  { href: "/#produits", label: "Nos produits" },
+  { href: "/#terroir", label: "Producteurs" },
+  { href: "/#bio", label: "La gamme bio" },
+  { href: "/terracoop/", label: "Terracoop" },
 ];
 
 export interface Mission {

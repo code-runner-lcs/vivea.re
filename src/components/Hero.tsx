@@ -34,10 +34,10 @@ export default function Hero() {
               sur toute l'île
             </p>
             <div class="poster-actions">
-              <a class="btn btn-cream" href="#/espaces">
+              <a class="btn btn-cream" href="/espaces/">
                 Espace pro
               </a>
-              <a class="btn btn-light" href="#/espaces/adherent">
+              <a class="btn btn-light" href="/espaces/adherent/">
                 Espace adhérent
               </a>
             </div>

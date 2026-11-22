@@ -1,0 +1,12 @@
+---
+import Base from "../../layouts/Base.astro";
+import Espaces from "../../components/Espaces";
+import "../../components/Espaces.css";
+---
+<Base
+  title="Espace adhérent — Vivéa · La Réunion"
+  description="Adhérent Vivéa : accédez à votre extranet, et trouvez toutes les informations pour rejoindre l'Organisation de Producteurs."
+  currentPage="espaces"
+>
+  <Espaces client:load initialTab="adherent" />
+</Base>

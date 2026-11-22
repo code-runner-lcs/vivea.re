@@ -32,3 +32,6 @@ coverage/
 # Caches
 .cache/
 .eslintcache/
+
+# Astro (types générés)
+.astro/

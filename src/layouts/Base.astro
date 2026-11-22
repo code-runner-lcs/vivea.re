@@ -1,0 +1,92 @@
+---
+/**
+ * Layout de base : head commun, polices auto-hébergées, reveal au scroll.
+ * Les pages passent leur `title` / `description` ; `currentPage` pilote l'état
+ * actif de la navigation (Header).
+ */
+import "@fontsource-variable/fraunces/full.css";
+import "@fontsource-variable/fraunces/full-italic.css";
+import "@fontsource-variable/instrument-sans";
+import "@fontsource-variable/instrument-sans/wght-italic.css";
+import "../styles/base.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+interface Props {
+  title: string;
+  description: string;
+  currentPage?: "home" | "espaces" | "terracoop";
+}
+
+const { title, description, currentPage = "home" } = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/logo-vivea.png" />
+    <link rel="apple-touch-icon" href="/logo-apple-touch.png" />
+    <script is:inline>
+      // Marque le document « JS actif » AVANT le premier paint :
+      // sans JS, les [data-reveal] restent visibles (voir base.css).
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <Header client:load currentPage={currentPage} />
+    <main id="contenu">
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      // Reveal au scroll — indépendant de Solid, sur le HTML statique.
+      // - passe immédiate + re-scan au `load` (layout stabilisé une fois les
+      //   ressources posées) pour tout ce qui est déjà dans le viewport ;
+      // - le reste : IntersectionObserver, ré-évalué au scroll/layout ;
+      // - API indisponible : tout est révélé (contenu jamais perdu).
+      (function () {
+        var reveal = function (el) { el.classList.add("revealed"); };
+        var scan;
+        try {
+          var io = new IntersectionObserver(
+            function (entries) {
+              for (var i = 0; i < entries.length; i++) {
+                if (entries[i].isIntersecting) {
+                  reveal(entries[i].target);
+                  io.unobserve(entries[i].target);
+                }
+              }
+            },
+            { threshold: 0.12 }
+          );
+          scan = function () {
+            document
+              .querySelectorAll("[data-reveal]:not(.revealed)")
+              .forEach(function (el) {
+                var r = el.getBoundingClientRect();
+                if (r.top < window.innerHeight && r.bottom > 0) {
+                  reveal(el);
+                } else {
+                  io.observe(el); // no-op si déjà observé
+                }
+              });
+          };
+        } catch (err) {
+          scan = function () {
+            document
+              .querySelectorAll("[data-reveal]:not(.revealed)")
+              .forEach(reveal);
+          };
+          scan();
+          return;
+        }
+        scan();
+        window.addEventListener("load", scan);
+      })();
+    </script>
+  </body>
+</html>

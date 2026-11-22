@@ -13,10 +13,10 @@ export default function CtaPro() {
             filière, en conventionnel comme en bio.
           </p>
           <div class="pro-actions">
-            <a class="btn btn-primary" href="#/espaces">
+            <a class="btn btn-primary" href="/espaces/">
               Accéder à l'espace pro
             </a>
-            <a class="btn btn-ghost" href="#/espaces/adherent">
+            <a class="btn btn-ghost" href="/espaces/adherent/">
               Espace adhérent
             </a>
           </div>

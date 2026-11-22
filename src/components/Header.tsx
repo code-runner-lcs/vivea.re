@@ -2,7 +2,9 @@ import { For, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { NAV_ITEMS } from "../data";
 import "./Header.css";
 
-export default function Header() {
+export default function Header(props: {
+  currentPage?: "home" | "espaces" | "terracoop";
+}) {
   const [scrolled, setScrolled] = createSignal(false);
   const [open, setOpen] = createSignal(false);
 
@@ -16,7 +18,7 @@ export default function Header() {
   return (
     <header class="site" classList={{ scrolled: scrolled() }}>
       <div class="wrap site-inner">
-        <a class="logo" href="#/" aria-label="Vivéa — accueil">
+        <a class="logo" href="/" aria-label="Vivéa — accueil">
           <img
             src="/logo-vivea-h.png"
             alt="Vivéa — La Coopérative"
@@ -25,7 +27,20 @@ export default function Header() {
         </a>
 
         <nav class="main" aria-label="Navigation principale">
-          <For each={NAV_ITEMS}>{(it) => <a href={it.href}>{it.label}</a>}</For>
+          <For each={NAV_ITEMS}>
+            {(it) => (
+              <a
+                href={it.href}
+                aria-current={
+                  props.currentPage === "terracoop" && it.href === "/terracoop/"
+                    ? "page"
+                    : undefined
+                }
+              >
+                {it.label}
+              </a>
+            )}
+          </For>
         </nav>
 
         <button
@@ -53,12 +68,12 @@ export default function Header() {
           <div class="panel-ctas">
             <a
               class="btn btn-ghost"
-              href="#/espaces/adherent"
+              href="/espaces/adherent/"
               onClick={() => setOpen(false)}
             >
               Espace adhérent
             </a>
-            <a class="btn btn-primary" href="#/espaces" onClick={() => setOpen(false)}>
+            <a class="btn btn-primary" href="/espaces/" onClick={() => setOpen(false)}>
               Espace pro
             </a>
           </div>

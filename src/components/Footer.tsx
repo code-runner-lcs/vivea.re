@@ -8,7 +8,7 @@ export default function Footer() {
       <div class="wrap">
         <div class="foot-grid">
           <div class="foot-brand">
-            <a class="logo foot-logo" href="#/" aria-label="Vivéa — haut de page">
+            <a class="logo foot-logo" href="/" aria-label="Vivéa — haut de page">
               <img
                 src="/logo-vivea-h.png"
                 alt="Vivéa — La Coopérative"
@@ -26,17 +26,17 @@ export default function Footer() {
 
           <nav class="foot-col" aria-label="Explorer">
             <h4>Explorer</h4>
-            <a href="#op">L'OP Vivéa</a>
-            <a href="#produits">Nos produits</a>
-            <a href="#terroir">Où sont les producteurs ?</a>
-            <a href="#bio">La gamme bio</a>
+            <a href="/#op">L'OP Vivéa</a>
+            <a href="/#produits">Nos produits</a>
+            <a href="/#terroir">Où sont les producteurs ?</a>
+            <a href="/#bio">La gamme bio</a>
           </nav>
 
           <nav class="foot-col" aria-label="Espaces">
             <h4>Espaces</h4>
-            <a href="#/espaces">Espace pro</a>
-            <a href="#/espaces/adherent">Espace adhérent</a>
-            <a href="#/terracoop">Terracoop</a>
+            <a href="/espaces/">Espace pro</a>
+            <a href="/espaces/adherent/">Espace adhérent</a>
+            <a href="/terracoop/">Terracoop</a>
           </nav>
 
           <nav class="foot-col" aria-label="Informations">

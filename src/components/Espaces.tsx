@@ -1,6 +1,8 @@
-import { For, Show } from "solid-js";
+import { For, Show, createSignal } from "solid-js";
 import { EXTRANET_URL, ESPACE_TABS, PRO_ITEMS } from "../data";
-import "./Espaces.css";
+// NB: le css n'est PAS importé ici — ce composant est une île hydratée :
+// l'import par le composant l'envoie dans le JS (FOUC). Les pages
+// espaces l'importent côté build pour un CSS statique.
 
 function ProPanel() {
   return (
@@ -77,10 +79,19 @@ function AdherentPanel() {
   );
 }
 
-export default function Espaces(props: {
-  tab: "pro" | "adherent";
-  onTab: (t: "pro" | "adherent") => void;
-}) {
+export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
+  const [tab, setTab] = createSignal(props.initialTab);
+
+  // La page adhérent est sa propre URL statique : l'onglet garde l'URL en phase.
+  const onTab = (t: "pro" | "adherent") => {
+    setTab(t);
+    history.replaceState(
+      null,
+      "",
+      t === "pro" ? "/espaces/" : "/espaces/adherent/"
+    );
+  };
+
   return (
     <section class="espaces">
       <div class="wrap">
@@ -105,10 +116,10 @@ export default function Espaces(props: {
                 type="button"
                 role="tab"
                 id={`tab-${t.id}`}
-                aria-selected={props.tab === t.id ? "true" : "false"}
+                aria-selected={tab() === t.id ? "true" : "false"}
                 aria-controls={`panel-${t.id}`}
-                classList={{ active: props.tab === t.id }}
-                onClick={() => props.onTab(t.id)}
+                classList={{ active: tab() === t.id }}
+                onClick={() => onTab(t.id)}
               >
                 {t.label}
               </button>
@@ -116,7 +127,7 @@ export default function Espaces(props: {
           </For>
         </div>
 
-        <Show when={props.tab === "pro"} fallback={<AdherentPanel />}>
+        <Show when={tab() === "pro"} fallback={<AdherentPanel />}>
           <ProPanel />
         </Show>
       </div>
