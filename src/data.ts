@@ -131,7 +131,8 @@ export const EXTRANET_URL = "https://extranet.vivea.re/extranet/";
 export const PRO_ITEMS: { title: string; detail: string }[] = [
   {
     title: "Une offre riche",
-    detail: "Des fruits et des légumes de qualité, une gamme complète et diversifiée pour approvisionner vos rayons.",
+    detail:
+      "Des fruits et des légumes de qualité, une gamme complète et diversifiée pour approvisionner vos rayons.",
   },
   {
     title: "Un savoir-faire éprouvé",
@@ -147,7 +148,8 @@ export const PRO_ITEMS: { title: string; detail: string }[] = [
   },
   {
     title: "Un service performant",
-    detail: "Une équipe de préparateurs de commande opérationnelle du lundi au samedi, 6 véhicules de livraisons et 3 prestataires à votre service.",
+    detail:
+      "Une équipe de préparateurs de commande opérationnelle du lundi au samedi, 6 véhicules de livraisons et 3 prestataires à votre service.",
   },
 ];
 
@@ -157,7 +159,11 @@ export interface FooterLink {
   label: string;
 }
 
-export const FOOTER_LINKS: { explorer: FooterLink[]; espaces: FooterLink[]; informer: FooterLink[] } = {
+export const FOOTER_LINKS: {
+  explorer: FooterLink[];
+  espaces: FooterLink[];
+  informer: FooterLink[];
+} = {
   explorer: [
     { href: "/#op", label: "L'OP Vivéa" },
     { href: "/#produits", label: "Nos produits" },
@@ -194,15 +200,11 @@ export const MENTIONS_LEGALES: LegalSection[] = [
   },
   {
     title: "Directeur de la publication",
-    blocks: [
-      "Nom et fonction de la personne responsable de la publication : [à compléter].",
-    ],
+    blocks: ["Nom et fonction de la personne responsable de la publication : [à compléter]."],
   },
   {
     title: "Hébergement",
-    blocks: [
-      "Hébergeur du site : [nom à compléter], [adresse], [pays]. Contact : [à compléter].",
-    ],
+    blocks: ["Hébergeur du site : [nom à compléter], [adresse], [pays]. Contact : [à compléter]."],
   },
   {
     title: "Propriété intellectuelle",

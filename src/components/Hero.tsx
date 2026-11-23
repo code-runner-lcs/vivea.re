@@ -8,13 +8,12 @@ export default function Hero() {
         <div class="hero-copy" data-reveal="1">
           <p class="eyebrow">Organisation de Producteurs · La Réunion</p>
           <h1>
-            Des fruits et légumes de La Réunion, cultivés par{" "}
-            <em>{NB_PRODUCTEURS} producteurs</em>.
+            Des fruits et légumes de La Réunion, cultivés par <em>{NB_PRODUCTEURS} producteurs</em>.
           </h1>
           <p class="lede">
-            Vivéa fédère et accompagne les producteurs de l'île : mise en marché,
-            exigence de qualité et conseil, pour donner aux fruits et légumes
-            réunionnais leur juste place — du champ à la table.
+            Vivéa fédère et accompagne les producteurs de l'île : mise en marché, exigence de
+            qualité et conseil, pour donner aux fruits et légumes réunionnais leur juste place — du
+            champ à la table.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#produits">

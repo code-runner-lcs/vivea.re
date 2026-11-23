@@ -12,10 +12,7 @@ export default function Terracoop() {
         </div>
 
         <div class="terra-band" data-reveal="1">
-          <img
-            src="/img/terracoop-logo.png"
-            alt="TERRA COOP — La Réunion paysanne"
-          />
+          <img src="/img/terracoop-logo.png" alt="TERRA COOP — La Réunion paysanne" />
         </div>
 
         <div class="terra-grid" data-reveal="1">
@@ -31,7 +28,9 @@ export default function Terracoop() {
           </div>
         </div>
 
-        <p class="terra-note" data-reveal="1">{TERRACOOP_NOTE}</p>
+        <p class="terra-note" data-reveal="1">
+          {TERRACOOP_NOTE}
+        </p>
       </div>
     </section>
   );

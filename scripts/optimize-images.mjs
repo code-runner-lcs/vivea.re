@@ -13,7 +13,7 @@
  * Les .jpg sources sont ensuite retirés (git rm) avec ce commit.
  */
 import sharp from "sharp";
-import { readdirSync, writeFileSync, readFileSync } from "node:fs";
+import { readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve("public/img");
@@ -44,7 +44,7 @@ for (const job of JOBS) {
     writeFileSync(out, buf);
     const meta = await sharp(out).metadata();
     console.log(
-      `${file} -> ${path.basename(out)} ${meta.width}x${meta.height} ${Math.round(buf.length / 1024)}K`
+      `${file} -> ${path.basename(out)} ${meta.width}x${meta.height} ${Math.round(buf.length / 1024)}K`,
     );
   }
 }

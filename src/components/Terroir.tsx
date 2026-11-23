@@ -10,8 +10,8 @@ export default function Terroir() {
           <p class="eyebrow">Le territoire</p>
           <h2 class="title">Où sont les producteurs ?</h2>
           <p class="lede">
-            Des Hauts à la côte, les exploitations couvrent l'ensemble de l'île et
-            s'organisent en bassins de production complémentaires.
+            Des Hauts à la côte, les exploitations couvrent l'ensemble de l'île et s'organisent en
+            bassins de production complémentaires.
           </p>
           <ul class="zones">
             <For each={ZONES}>

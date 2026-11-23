@@ -11,9 +11,8 @@ export default function BioBand() {
           <p class="eyebrow">Agriculture biologique</p>
           <h2 class="title">La gamme bio Vivéa</h2>
           <p class="lede">
-            Une part de la production est conduite en agriculture biologique : des
-            fruits et légumes cultivés sans intrants de synthèse, avec la
-            traçabilité qu'exige la filière.
+            Une part de la production est conduite en agriculture biologique : des fruits et légumes
+            cultivés sans intrants de synthèse, avec la traçabilité qu'exige la filière.
           </p>
           <div class="bio-actions">
             <a class="btn btn-light" href="/#produits">

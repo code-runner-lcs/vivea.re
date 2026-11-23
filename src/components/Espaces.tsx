@@ -40,12 +40,7 @@ function ProPanel() {
 
 function AdherentPanel() {
   return (
-    <div
-      class="espace-panel"
-      role="tabpanel"
-      id="panel-adherent"
-      aria-labelledby="tab-adherent"
-    >
+    <div class="espace-panel" role="tabpanel" id="panel-adherent" aria-labelledby="tab-adherent">
       <div class="espace-banner">
         <img
           src="/img/espace-adherent.webp"
@@ -58,12 +53,7 @@ function AdherentPanel() {
         <h2 class="title">Espace adhérent Vivéa</h2>
         <p class="lede">Vous êtes adhérent Vivéa, accédez à votre extranet :</p>
         <div class="espace-actions">
-          <a
-            class="btn btn-primary"
-            href={EXTRANET_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="btn btn-primary" href={EXTRANET_URL} target="_blank" rel="noopener noreferrer">
             Accéder à l'extranet
             <span class="ext" aria-hidden="true">
               &nbsp;&#8599;
@@ -71,9 +61,7 @@ function AdherentPanel() {
             <span class="sr-only">(nouvel onglet)</span>
           </a>
         </div>
-        <p class="lede espace-note">
-          Vous n'êtes pas encore adhérent et souhaitez le devenir ?
-        </p>
+        <p class="lede espace-note">Vous n'êtes pas encore adhérent et souhaitez le devenir ?</p>
         <div class="espace-actions">
           <a class="btn btn-ghost" href="#contact">
             Rejoignez-nous
@@ -91,11 +79,7 @@ export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
   // La page adhérent est sa propre URL statique : l'onglet garde l'URL en phase.
   const onTab = (t: "pro" | "adherent") => {
     setTab(t);
-    history.replaceState(
-      null,
-      "",
-      t === "pro" ? "/espaces/" : "/espaces/adherent/"
-    );
+    history.replaceState(null, "", t === "pro" ? "/espaces/" : "/espaces/adherent/");
   };
 
   // Pattern ARIA APG : flèches ←/→ bouclent, Home/End, activation au focus.
@@ -107,8 +91,7 @@ export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
     if (current === -1) return;
     let next: number | null = null;
     if (e.key === "ArrowRight") next = (current + 1) % list.length;
-    else if (e.key === "ArrowLeft")
-      next = (current - 1 + list.length) % list.length;
+    else if (e.key === "ArrowLeft") next = (current - 1 + list.length) % list.length;
     else if (e.key === "Home") next = 0;
     else if (e.key === "End") next = list.length - 1;
     if (next === null) return;
@@ -124,8 +107,8 @@ export default function Espaces(props: { initialTab: "pro" | "adherent" }) {
           <p class="eyebrow">Espaces connectés</p>
           <h1 class="title">Les espaces Vivéa</h1>
           <p class="lede">
-            Professionnel de la distribution ou adhérent de l'OP : chaque profil a
-            son point d'entrée — choisissez le vôtre.
+            Professionnel de la distribution ou adhérent de l'OP : chaque profil a son point
+            d'entrée — choisissez le vôtre.
           </p>
         </div>
 

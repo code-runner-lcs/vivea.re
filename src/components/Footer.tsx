@@ -11,40 +11,28 @@ export default function Footer() {
         <div class="foot-grid">
           <div class="foot-brand">
             <a class="logo foot-logo" href="/" aria-label="Vivéa — haut de page">
-              <img
-                src="/logo-vivea-h.png"
-                alt="Vivéa — La Coopérative"
-                class="foot-logo-img"
-              />
+              <img src="/logo-vivea-h.png" alt="Vivéa — La Coopérative" class="foot-logo-img" />
             </a>
             <p>
-              Organisation de Producteurs regroupant {NB_PRODUCTEURS} producteurs
-              de fruits et légumes sur toute l'île de La Réunion.
+              Organisation de Producteurs regroupant {NB_PRODUCTEURS} producteurs de fruits et
+              légumes sur toute l'île de La Réunion.
             </p>
-            <p class="contact-note">
-              Coordonnées (adresse, téléphone, email) à insérer.
-            </p>
+            <p class="contact-note">Coordonnées (adresse, téléphone, email) à insérer.</p>
           </div>
 
           <nav class="foot-col" aria-label="Explorer">
             <h3>Explorer</h3>
-            <For each={FOOTER_LINKS.explorer}>
-              {(l) => <a href={l.href}>{l.label}</a>}
-            </For>
+            <For each={FOOTER_LINKS.explorer}>{(l) => <a href={l.href}>{l.label}</a>}</For>
           </nav>
 
           <nav class="foot-col" aria-label="Espaces">
             <h3>Espaces</h3>
-            <For each={FOOTER_LINKS.espaces}>
-              {(l) => <a href={l.href}>{l.label}</a>}
-            </For>
+            <For each={FOOTER_LINKS.espaces}>{(l) => <a href={l.href}>{l.label}</a>}</For>
           </nav>
 
           <nav class="foot-col" aria-label="Informations">
             <h3>Informer</h3>
-            <For each={FOOTER_LINKS.informer}>
-              {(l) => <a href={l.href}>{l.label}</a>}
-            </For>
+            <For each={FOOTER_LINKS.informer}>{(l) => <a href={l.href}>{l.label}</a>}</For>
           </nav>
         </div>
 

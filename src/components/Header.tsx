@@ -2,9 +2,7 @@ import { For, Show, createSignal, createEffect, onCleanup, onMount } from "solid
 import { NAV_ITEMS } from "../data";
 import "./Header.css";
 
-export default function Header(props: {
-  currentPage?: "home" | "espaces" | "terracoop";
-}) {
+export default function Header(props: { currentPage?: "home" | "espaces" | "terracoop" }) {
   const [scrolled, setScrolled] = createSignal(false);
   const [open, setOpen] = createSignal(false);
   let headerEl: HTMLElement | undefined;
@@ -56,11 +54,7 @@ export default function Header(props: {
     <header ref={headerEl} class="site" classList={{ scrolled: scrolled() }}>
       <div class="wrap site-inner">
         <a class="logo" href="/" aria-label="Vivéa — accueil">
-          <img
-            src="/logo-vivea-h.png"
-            alt="Vivéa — La Coopérative"
-            class="logo-img"
-          />
+          <img src="/logo-vivea-h.png" alt="Vivéa — La Coopérative" class="logo-img" />
         </a>
 
         <nav class="main" aria-label="Navigation principale">
@@ -104,11 +98,7 @@ export default function Header(props: {
             )}
           </For>
           <div class="panel-ctas">
-            <a
-              class="btn btn-ghost"
-              href="/espaces/adherent/"
-              onClick={() => setOpen(false)}
-            >
+            <a class="btn btn-ghost" href="/espaces/adherent/" onClick={() => setOpen(false)}>
               Espace adhérent
             </a>
             <a class="btn btn-primary" href="/espaces/" onClick={() => setOpen(false)}>

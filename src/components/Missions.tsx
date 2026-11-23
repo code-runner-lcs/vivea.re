@@ -10,9 +10,9 @@ export default function Missions() {
           <p class="eyebrow">L'organisation</p>
           <h2 class="title">Le rôle d'une OP</h2>
           <p class="lede">
-            En tant qu'Organisation de Producteurs, VIVÉA concentre l'offre de ses
-            adhérents pour la mettre en marché de façon structurée : volumes, qualité,
-            régularité — au service des producteurs comme des acheteurs.
+            En tant qu'Organisation de Producteurs, VIVÉA concentre l'offre de ses adhérents pour la
+            mettre en marché de façon structurée : volumes, qualité, régularité — au service des
+            producteurs comme des acheteurs.
           </p>
           <a class="link-arrow" href="#produits">
             Découvrir nos produits

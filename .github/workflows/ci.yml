@@ -1,0 +1,32 @@
+# CI — lint, typecheck et build sur chaque push / PR
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+
+      - name: Installation (npm ci — reproduction exacte du lock)
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Prettier
+        run: npm run format:check
+
+      - name: astro check (typecheck)
+        run: npm run check
+
+      - name: Build de production
+        run: npm run build
