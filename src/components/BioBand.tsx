@@ -16,8 +16,8 @@ export default function BioBand() {
             traçabilité qu'exige la filière.
           </p>
           <div class="bio-actions">
-            <a class="btn btn-light" href="#produits">
-              Découvrir la gamme bio
+            <a class="btn btn-light" href="/#produits">
+              Voir nos produits
             </a>
           </div>
         </div>

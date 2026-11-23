@@ -169,10 +169,7 @@ export const FOOTER_LINKS: { explorer: FooterLink[]; espaces: FooterLink[]; info
     { href: "/espaces/adherent/", label: "Espace adhérent" },
     { href: "/terracoop/", label: "Terracoop" },
   ],
-  informer: [
-    { href: "#", label: "Actus Vivéa" },
-    { href: "#contact", label: "Contactez-nous" },
-  ],
+  informer: [{ href: "#contact", label: "Contactez-nous" }],
 };
 
 // ---------- Pages légales (squelettes — contenus À VALIDER VIVÉA) ----------
