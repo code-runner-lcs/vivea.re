@@ -1,12 +1,11 @@
 ---
 import Base from "../../layouts/Base.astro";
-import Espaces from "../../components/Espaces";
-import "../../components/Espaces.css";
+import Espaces from "../../components/Espaces.astro";
 ---
 <Base
   title="Espaces pro & adhérent — Vivéa · La Réunion"
   description="Professionnels de la distribution et adhérents : l'espace pro pour sourcer les fruits et légumes de la filière, l'espace adhérent pour accéder à l'extranet Vivéa."
   currentPage="espaces"
 >
-  <Espaces client:load initialTab="pro" />
+  <Espaces initialTab="pro" />
 </Base>

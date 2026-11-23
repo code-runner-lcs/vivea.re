@@ -119,11 +119,12 @@ export const PRODUITS: Produit[] = [
 export interface TabDef {
   id: "pro" | "adherent";
   label: string;
+  url: string;
 }
 
 export const ESPACE_TABS: TabDef[] = [
-  { id: "pro", label: "Espace pro" },
-  { id: "adherent", label: "Espace adhérent" },
+  { id: "pro", label: "Espace pro", url: "/espaces/" },
+  { id: "adherent", label: "Espace adhérent", url: "/espaces/adherent/" },
 ];
 
 export const EXTRANET_URL = "https://extranet.vivea.re/extranet/";
